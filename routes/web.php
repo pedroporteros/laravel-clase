@@ -18,14 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PruebaController::class, 'index'])->name('pri');
 
 
-
-
-
-
-
-
-
-
 Route::get('/dashboard', function () {
     $users = DB::table('users')->get();
 
