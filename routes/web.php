@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PruebaController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [CursoController::class, 'index'])->name('pri');
-// Route::get('/contacto', [CursoController::class, 'create'])->name('con');
-// Route::get('/blog', [CursoController::class, 'show'])->name('blg');
-
-
 Route::get('/', [PruebaController::class, 'index'])->name('pri');
 
-Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usr');
 
-Route::view('/blog', 'blog')->name('blg');
-Route::view('/contacto', 'contacto')->name('con');
 
+
+
+
+
+
+
+
+Route::get('/dashboard', function () {
+    $users = DB::table('users')->get();
+
+    return view('dashboard', ['users'=>$users]);
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -7,14 +7,15 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['titulo' => 'Usuarios']); ?>
-    <h1>Usuarios</h1>
+    <h1 class="mt-5 text-center">Usuarios</h1>
 
     
+    <div class="mt-5 text-center">
+        
+    </div>
 
-    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $usuario): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php echo e($usuario->usuario); ?>
-
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
+    
 
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
