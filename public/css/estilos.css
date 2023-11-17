@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    /* border: 1px solid yellow; */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+body {
+    background: #233142;
+}
+
+form {
+    width: 70%;
+    border-radius: 15px;
+    background: #e3e3e3;
+    border: 3px solid #f95959;
+    margin-top: 100px;
+    text-align: center;
+}
+
+label {
+    width: 25%;
+    text-align: left;
+}
+
+input[type='text'] {
+    width: 65%;
+}
+
+input[type='submit'] {
+    background: #f95959;
+    color: #e3e3e3;
+    font-weight: bold;
+    border: 1px solid #233142;
+    border-radius: 10px;
+    text-shadow: none;
+}

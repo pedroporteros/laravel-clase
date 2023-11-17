@@ -7,19 +7,20 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['titulo' => 'Principal','meta-description' => 'Página principal','suma' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(2+3)]); ?>
-    <h2 class="mt-3 text-center">Principal</h2>
-    <form action="" method="GET" class="text-center">
-        <div class="mt-5">
+
+    <form action="" method="GET">
+        <h2>Log In</h2>
+        <div>
             <label for="name">Name: </label>
-            <input class="ml-4" type="text" name="" id="name">
+            <input type="text" name="" id="name">
         </div>
-        <div class="mt-3">
-            <label for="name">Password: </label>
-            <input class="ml-3" type="text" name="" id="password">
+        <div>
+            <label for="pass">Password: </label>
+            <input type="text" name="" id="password">
         </div>
-        <div class="mb-3 mt-3"> 
-            <input type="submit" value="Log In" />
-            <a>Not register? Create an account</a>
+        <div> 
+            <a href="<?php echo e(route('tab')); ?>"><input type="submit" value="Log In" /></a>
+            <p>No tienes cuenta? <a href='<?php echo e(route('reg')); ?>'>Create an account</a></p>
         </div>
     </form>
 

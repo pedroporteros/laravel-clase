@@ -5,6 +5,7 @@
         <meta name="description" content="{{ $metaDescription ?? "Descripción por defecto" }}" />
         <title>{{ $titulo ?? 'Defecto' }}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="{{ asset('css/estilos.css') }}" rel="stylesheet" type="text/css">
         <!-- Scripts de Bootstrap (opcional, pero a menudo necesarios) -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-dp9txjx93b6X0pOndLWxjYPn5zhF9+K6v2g6i+k/jAj5ndV6cv5U8e1fQY4xxRDi" crossorigin="anonymous"></script>

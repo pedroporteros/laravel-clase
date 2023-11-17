@@ -3,22 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PruebaController extends Controller
 {
-    public function index(){ //principal
-        //$nombre = 'pepe';
-        //$lista = ['perro','gato','avestruz'];
-        $diccionario = [['num' => 'uno'],['num' => 'dos'],['num' => 'tres']];
-        return view('auth.login', ['dic' => $diccionario]);//no estamos seguros de si siempre se devuelve
+    public function index() { //principal        
+        return view('principal');
     }
 
-    public function create(){ //el de formularios para crear
-        $doce = 12;
-        return view('contacto', ['doce' => $doce]);
+
+    public function create() {
+        return view('registro');
     }
 
-    public function show(){ //el de mostrar algo
-        return view('blog'); 
+    public function show() {
+        $usuarios = DB::table('usuario')->get();
+
+        return view('tabla', ['users' => $usuarios]);
     }
+
+
 }
